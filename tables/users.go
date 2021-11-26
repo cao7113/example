@@ -79,12 +79,14 @@ func GetUserTable(ctx *context.Context) (userTable table.Table) {
 			return true, "", "<h2>hello world</h2>"
 		}))
 	info.AddButton("google", icon.Google, action.Jump("https://google.com"))
-	info.AddButton("popup", icon.Terminal, action.PopUp("/admin/popup", "Popup Example",
+	info.AddButton("popup111", icon.Terminal, action.PopUp("/admin/popup", "Popup Example",
 		func(ctx *context.Context) (success bool, msg string, data interface{}) {
 			return true, "", "<h2>hello world</h2>"
 		}))
 	info.AddButton("iframe", icon.Tv, action.PopUpWithIframe("/admin/iframe", "Iframe Example",
 		action.IframeData{Src: "/admin/info/profile/new"}, "900px", "480px"))
+	info.AddButton("iframe-g", icon.Tv, action.PopUpWithIframe("/admin/iframe-g", "Iframe Example G",
+		action.IframeData{Src: "https://myaccount.google.com/"}, "900px", "680px"))
 	info.AddButton("ajax", icon.Android, action.Ajax("/admin/ajax",
 		func(ctx *context.Context) (success bool, msg string, data interface{}) {
 			return true, "success", ""

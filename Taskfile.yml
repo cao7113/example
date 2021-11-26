@@ -1,0 +1,7 @@
+# https://taskfile.dev
+version: '3'
+tasks:
+  run:
+    - go run .
+  open:
+    - open http://localhost:9033/admin
